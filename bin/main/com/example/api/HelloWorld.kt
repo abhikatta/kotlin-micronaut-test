@@ -1,4 +1,4 @@
-package com.example
+package com.example.api
 
 import io.micronaut.http.MediaType
 import io.micronaut.http.annotation.Controller
@@ -16,9 +16,6 @@ class HelloController {
 
     @Get("/json")
     fun helloJSON(): Map<String, String> {
-        return mapOf(
-            "message" to "Hello, world!"
-        )
-
+        return mapOf("message" to "Hello, world!")
     }
 }

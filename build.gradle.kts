@@ -11,7 +11,7 @@ version = "0.1"
 group = "com.example"
 
 
-val kotlinVersion=project.properties.get("kotlinVersion")
+val kotlinVersion = project.properties.get("kotlinVersion")
 
 repositories {
     mavenCentral()
@@ -29,6 +29,8 @@ dependencies {
     runtimeOnly("tools.jackson.module:jackson-module-kotlin")
     testImplementation("io.micronaut:micronaut-http-client")
     testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+    implementation("io.micronaut.sql:micronaut-jdbc-hikari")
+    runtimeOnly("org.postgresql:postgresql")
 }
 
 
@@ -81,11 +83,6 @@ tasks.named<io.micronaut.gradle.docker.MicronautDockerfile>("dockerfile") {
 
     baseImage = "eclipse-temurin:25-jre"
 }
-
-
-
-
-
 
 
 // https://docs.gradle.org/current/userguide/upgrading_major_version_9.html#test_task_fails_when_no_tests_are_discovered

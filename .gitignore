@@ -14,3 +14,4 @@ build/
 # Tooling
 .idea/
 .DS_Store
+.env
